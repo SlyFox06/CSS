@@ -1,6 +1,7 @@
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+// Time class definition
 class Time {
     int hr;
     int min;
@@ -26,24 +27,23 @@ class Time {
     }
 }
 
-public class TimeDisplay {
+// Main class
+public class Main {
     public static void main(String[] args) {
-        // Creating a Time object using the default constructor
-        Time defaultTime = new Time();
-        defaultTime.displayTime();
+        // Creating Time objects using default and parameterized constructors
+        Time time1 = new Time();
+        Time time2 = new Time(10, 30, 45);
 
-        // Creating a Time object using the parameterized constructor
-        Time specificTime = new Time(10, 30, 45);
-        specificTime.displayTime();
+        // Displaying the time
+        time1.displayTime();
+        time2.displayTime();
 
-        // Getting the current date and time
-        LocalDateTime currentDateTime = LocalDateTime.now();
-
-        // Formatting date and time using DateTimeFormatter
+        // Getting and formatting the current date and time
+        LocalDateTime now = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String formattedDateTime = now.format(formatter);
 
         // Printing the formatted date and time
-        String formattedDateTime = currentDateTime.format(formatter);
         System.out.println("Current Date and Time: " + formattedDateTime);
     }
 }
