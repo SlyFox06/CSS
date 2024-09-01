@@ -1,0 +1,30 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class AnagramCheck {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the first string: ");
+        String first = scanner.nextLine().toLowerCase();
+
+        System.out.print("Enter the second string: ");
+        String second = scanner.nextLine().toLowerCase();
+
+        // Remove spaces and sort the characters of both strings
+        char[] firstArray = first.replaceAll("\\s+", "").toCharArray();
+        char[] secondArray = second.replaceAll("\\s+", "").toCharArray();
+
+        Arrays.sort(firstArray);
+        Arrays.sort(secondArray);
+
+        // Check if sorted character arrays are equal
+        if (Arrays.equals(firstArray, secondArray)) {
+            System.out.println("The strings are anagrams.");
+        } else {
+            System.out.println("The strings are not anagrams.");
+        }
+
+        scanner.close();
+    }
+}
