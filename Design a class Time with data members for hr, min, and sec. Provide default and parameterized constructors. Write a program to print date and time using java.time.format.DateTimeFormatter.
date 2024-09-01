@@ -1,0 +1,49 @@
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+class Time {
+    int hr;
+    int min;
+    int sec;
+
+    // Default constructor
+    Time() {
+        this.hr = 0;
+        this.min = 0;
+        this.sec = 0;
+    }
+
+    // Parameterized constructor
+    Time(int hr, int min, int sec) {
+        this.hr = hr;
+        this.min = min;
+        this.sec = sec;
+    }
+
+    // Method to display time
+    void displayTime() {
+        System.out.println("Time: " + hr + ":" + min + ":" + sec);
+    }
+}
+
+public class TimeDisplay {
+    public static void main(String[] args) {
+        // Creating a Time object using the default constructor
+        Time defaultTime = new Time();
+        defaultTime.displayTime();
+
+        // Creating a Time object using the parameterized constructor
+        Time specificTime = new Time(10, 30, 45);
+        specificTime.displayTime();
+
+        // Getting the current date and time
+        LocalDateTime currentDateTime = LocalDateTime.now();
+
+        // Formatting date and time using DateTimeFormatter
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
+        // Printing the formatted date and time
+        String formattedDateTime = currentDateTime.format(formatter);
+        System.out.println("Current Date and Time: " + formattedDateTime);
+    }
+}
