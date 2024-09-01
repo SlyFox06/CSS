@@ -1,0 +1,58 @@
+// Base class Animal
+class Animal {
+    // Method to describe movement
+    void move() {
+        System.out.println("This animal moves.");
+    }
+
+    // Method to describe sound
+    void makeSound() {
+        System.out.println("This animal makes a sound.");
+    }
+}
+
+// Subclass Bird
+class Bird extends Animal {
+    // Overriding move method for Bird
+    @Override
+    void move() {
+        System.out.println("The bird flies.");
+    }
+
+    // Overriding makeSound method for Bird
+    @Override
+    void makeSound() {
+        System.out.println("The bird chirps.");
+    }
+}
+
+// Subclass Panthera
+class Panthera extends Animal {
+    // Overriding move method for Panthera
+    @Override
+    void move() {
+        System.out.println("The panthera prowls.");
+    }
+
+    // Overriding makeSound method for Panthera
+    @Override
+    void makeSound() {
+        System.out.println("The panthera roars.");
+    }
+}
+
+// Main class to test the Animal hierarchy
+public class Main {
+    public static void main(String[] args) {
+        // Create instances of Bird and Panthera
+        Animal myBird = new Bird();
+        Animal myPanthera = new Panthera();
+
+        // Test the methods
+        myBird.move();
+        myBird.makeSound();
+
+        myPanthera.move();
+        myPanthera.makeSound();
+    }
+}
