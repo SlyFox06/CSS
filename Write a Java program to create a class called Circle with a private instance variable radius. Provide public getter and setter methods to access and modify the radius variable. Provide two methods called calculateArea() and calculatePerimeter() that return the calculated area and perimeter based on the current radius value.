@@ -1,0 +1,42 @@
+class Circle {
+    // Private instance variable
+    private double radius;
+
+    // Public getter method for radius
+    public double getRadius() {
+        return radius;
+    }
+
+    // Public setter method for radius
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+
+    // Method to calculate the area of the circle
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+
+    // Method to calculate the perimeter (circumference) of the circle
+    public double calculatePerimeter() {
+        return 2 * Math.PI * radius;
+    }
+}
+
+// Main class to test the Circle class
+public class Main {
+    public static void main(String[] args) {
+        // Create a Circle object
+        Circle circle = new Circle();
+
+        // Set the radius using the setter method
+        circle.setRadius(5.0);
+
+        // Get the radius and display it
+        System.out.println("Radius: " + circle.getRadius());
+
+        // Calculate and display the area and perimeter
+        System.out.println("Area: " + circle.calculateArea());
+        System.out.println("Perimeter: " + circle.calculatePerimeter());
+    }
+}
