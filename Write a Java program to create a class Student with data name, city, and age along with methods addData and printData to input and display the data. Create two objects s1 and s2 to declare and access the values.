@@ -1,0 +1,38 @@
+class Student {
+    String name;
+    String city;
+    int age;
+
+    // Method to add data to the student object
+    void addData(String name, String city, int age) {
+        this.name = name;
+        this.city = city;
+        this.age = age;
+    }
+
+    // Method to print the student data
+    void printData() {
+        System.out.println("Name: " + name);
+        System.out.println("City: " + city);
+        System.out.println("Age: " + age);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating two Student objects
+        Student s1 = new Student();
+        Student s2 = new Student();
+
+        // Adding data to s1 and s2
+        s1.addData("Alice", "New York", 20);
+        s2.addData("Bob", "Los Angeles", 22);
+
+        // Printing data of s1 and s2
+        System.out.println("Student 1:");
+        s1.printData();
+
+        System.out.println("\nStudent 2:");
+        s2.printData();
+    }
+}
